@@ -1,12 +1,14 @@
 {
   "name": "responsive_design",
   "version": "0.0.1",
-
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "node-sass": "~0.6.6",
     "compass": "~0.1.0"
   },
-  
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-sass": "~0.5.0",
