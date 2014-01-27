@@ -6,8 +6,8 @@ module.exports = function(grunt) {
       dist: {   
         options: {
           outputStyle: 'expanded', // expanded, compressed, compact, nested
-          sassDir: 'compass',
-          specify: 'compass/main.scss',
+          sassDir: 'css',
+          specify: 'css/main.scss',
           cssDir: '../build/css'
         }
       }
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['compass/sass/**/*.scss', '!compass/sass/vendor/**/*.scss'],
+        files: ['css/sass/**/*.scss', '!css/sass/vendor/**/*.scss'],
         tasks: ['compass:dist'],
         options: {
           livereload: true // Automatisches neuladen im Browsers
@@ -25,9 +25,13 @@ module.exports = function(grunt) {
 
   });
 
+  // Plugin´s
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // Tasks
+  grunt.registerTask('default', ['watch']);
 
 };
