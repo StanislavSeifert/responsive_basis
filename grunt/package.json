@@ -1,16 +1,12 @@
 {
   "name": "responsive_design",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+
   "dependencies": {
-    "express": "3.4.0",
-    "ejs": "~0.8.4",
     "node-sass": "~0.6.6",
     "compass": "~0.1.0"
   },
+  
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-sass": "~0.5.0",
@@ -18,6 +14,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-shell": "~0.4.0",
     "grunt-cli": "~0.1.9",
-    "grunt-contrib-compass": "~0.6.0"
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.3.2"
   }
 }
