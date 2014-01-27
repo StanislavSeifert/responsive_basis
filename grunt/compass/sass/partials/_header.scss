@@ -1,9 +1,15 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	background: #0ff;
+}
+
 .header {
 	margin: 0;
 }
 
 .box { 
-	@include border-radius(20px);
+	@include border-radius(30px);
 	@include box-sizing($test); 
 	font: 100% $font-stack; 
 }  

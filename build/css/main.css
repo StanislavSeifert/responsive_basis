@@ -7469,17 +7469,24 @@ td.visible-print {
   }
 }
 /* line 1, ../../grunt/compass/sass/partials/_header.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #0ff;
+}
+
+/* line 7, ../../grunt/compass/sass/partials/_header.scss */
 .header {
   margin: 0;
 }
 
-/* line 5, ../../grunt/compass/sass/partials/_header.scss */
+/* line 11, ../../grunt/compass/sass/partials/_header.scss */
 .box {
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
