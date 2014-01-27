@@ -1,0 +1,9 @@
+.header {
+	margin: 0;
+}
+
+.box { 
+	@include border-radius(20px);
+	@include box-sizing($test); 
+	font: 100% $font-stack; 
+}  
