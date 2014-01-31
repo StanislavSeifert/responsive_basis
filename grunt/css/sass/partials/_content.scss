@@ -1,3 +1,21 @@
-.content {
-	margin: 0;
+.csc-textpic-imagewrap {
+	text-align: center;
+}
+
+.more {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+/* Small devices (smartphones, 240px and up) */
+@media screen and (max-width: $screen-xs-max) {
+	.csc-textpic-imagewrap {
+		text-align: left;
+		float: left;
+		img {
+			margin-top: 0;	
+			margin-left: 0;		
+		}
+	}
 }

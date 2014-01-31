@@ -1,15 +1,38 @@
-html, body {
-	height: 100%;
-	width: 100%;
-	background: #0ff;
+header {
+	position: relative;
+
+	#logo { 
+	    img {
+			padding: 13px 0 0 0; 
+		}
+	}
+
+	#socialbuttons {
+	    position: absolute;
+	    right: $box-half-padding;
+	    top: 8px;
+	    #faceb {
+	    	float: left;
+	    	margin-right:5px;
+	    }
+	    #twitter{
+	    	float: left;
+	    }
+	    img {
+	    	margin: 0;
+	    }
+	}
 }
 
-.header {
-	margin: 0;
-}
+/* Small devices (smartphones, 240px and up) */
+@media screen and (max-width: $screen-xs-max) {
+	header {
+		#socialbuttons {
+			display: none;
+		}
 
-.box { 
-	@include border-radius(20px);
-	@include box-sizing($test);
-	font: 100% $font-stack;
+		img.img-responsive {
+			width: 90%;
+		}
+	}
 }

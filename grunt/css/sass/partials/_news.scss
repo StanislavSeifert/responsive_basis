@@ -1,0 +1,27 @@
+.news-list-item {
+	margin-bottom: 0.8rem;
+	overflow: hidden;
+	.news-list-date {
+		display: block;
+	    float: right;
+	    padding-left: 10px;
+	}
+	img {
+		float: right;
+    	margin: 0 2px 5px 5px;
+	}
+	h2 {
+		margin-bottom: .1rem;
+	}
+}
+
+/* Small devices (smartphones, 240px and up) */
+@media screen and (max-width: $screen-xs-max) {
+	.news-list-item {
+		border-bottom: 1px solid $grey-dark;
+		padding-bottom: 10px;
+		&:nth-child(4) {
+			border: 0;
+		}
+	}
+}

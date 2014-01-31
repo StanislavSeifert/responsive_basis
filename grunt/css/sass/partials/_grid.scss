@@ -1,0 +1,107 @@
+// Specific Grid Modifications
+
+// Grid - Fluid Width Equal Height Columns
+/*.row{
+	overflow: hidden; 
+	> [class*="col-"] > div{
+		margin-bottom: -99999px;
+		padding-bottom: 99999px;
+	}
+	}*/
+
+// Style
+
+.row {
+	padding: 0 6px;
+	background: $grey-dark; 
+
+	> div {
+		background: $grey-dark;
+		padding-top: $box-half-padding;
+		padding-bottom: $box-half-padding;
+		min-height:100%;
+		position: relative;
+		&:last-child{
+			border-right: none;
+		}
+		> div {
+			background: $white;
+			padding: $box-half-padding*2;
+			overflow: hidden;
+			padding-bottom: $box-half-padding*4; 
+
+		}
+	}
+
+	> div.nivoslider > div {
+		padding: 0;
+		img {
+			margin: 0;
+		}
+	}
+}
+
+header.row {
+	background: none;
+	padding-bottom: $box-half-padding+6;
+	> div {
+		background: none;
+		> div {
+			background: none;
+			padding: 0;
+		}
+	}
+}
+nav.row {
+	@extend header.row;
+	background: $grey-dark;
+	padding-top: $box-half-padding+6;
+}
+
+footer.row {
+	@extend header.row;
+	background: $grey-dark;
+	padding-top: $box-half-padding;
+	padding-bottom: $box-half-padding+6;
+}
+
+
+/* Small devices (smartphones, 240px and up) */
+@media screen and (max-width: $screen-xs-max) {
+
+	.row, nav.row, footer.row {
+		background: $blue-light; 
+
+		> div {
+			background: $blue-light;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) {
+	.row {
+		> div {
+			> div.toggle-box {
+				height: 2.1rem;
+				@include background-image(linear-gradient(#4283B5 0%, #9AC3E6 100%));
+				h1 {
+					color: $white;
+					cursor: pointer;
+				}
+				.icon {
+					position: absolute;
+					right: 10px;
+					top: 20px;
+					height: 20px;
+					width: 20px;
+					background: url("../images/icons/toggler.png");
+				}
+				.more {
+					display: none;
+				}
+			}
+		}
+	}
+	
+}
+

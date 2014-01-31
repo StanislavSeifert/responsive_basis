@@ -23,14 +23,14 @@
 
 // Core CSS
 @import "scaffolding";
-@import "type";
+//@import "type";
 @import "code";
 @import "grid";
-@import "tables";
+/*@import "tables";
 @import "forms";
-@import "buttons";
+@import "buttons";*/
 
-// Components: common
+/*// Components: common
 @import "component-animations";
 @import "glyphicons";
 @import "dropdowns";
@@ -57,7 +57,7 @@
 @import "modals";
 @import "tooltip";
 @import "popovers";
-@import "carousel";
+@import "carousel";*/
 
 // Utility classes
 @import "utilities"; // Has to be last to override when necessary

@@ -1,3 +1,22 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 $test: border-box;
+
+// Corporate Colors
+$container-bg-color: #9AC3E6;
+$grey-dark: #5A5A66;
+$grey-font: #666;
+$blue: #349ACC;
+$blue-light: #D5EBF5;
+$green:#00B02F;
+$orange:#FC7204;
+$purple:#746EF4;
+$red:#F40AA4;
+$green-dark:#047E84;
+$yellow:#F4B604;
+$white: #ffffff;
+$col-bg-color: $white;
+
+// Corporate Design Elements
+$container-width: 1000px;
+$box-half-padding: $grid-gutter-width/2; // $grid-gutter-width is the value right + left.

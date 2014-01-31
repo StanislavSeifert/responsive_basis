@@ -1,8 +1,18 @@
 @import "sass/vendor/bootstrap/sass-bootstrap";
+@import "sass/vendor/nivoslider/style";
+@import "sass/vendor/nivoslider/default";
 
+@import "sass/modules/font";
 @import "sass/modules/mixins";
 @import "sass/modules/variables";
+
+@import "sass/partials/reset";
+@import "sass/partials/grid";
 
 @import "sass/partials/header";
 @import "sass/partials/footer";
 @import "sass/partials/content";
+@import "sass/partials/navi";
+@import "sass/partials/search";
+@import "sass/partials/news";
+

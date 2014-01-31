@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     watch: {
       // Wenn sich bei SCSS etwas verändert
       sass: {
-        files: ['css/sass/**/*.scss', '!css/sass/vendor/**/*.scss'],
+        files: ['css/sass/*.scss', 'css/sass/**/*.scss', 'css/sass/vendor/**/*.scss'],
         tasks: ['compass:dist'],
         options: {
           livereload: true // Automatisches neuladen im Browsers
@@ -49,8 +49,16 @@ module.exports = function(grunt) {
         tasks: ['concat', 'uglify'], //Zusammenführen & Minimizen
         options: {
             spawn: false,
+            livereload: true // Automatisches neuladen im Browsers
         }
       },
+      // Wenn sich das HTML ändert
+      html: {
+        files: ['../build/*.html'],
+        options: {
+          livereload: true // Automatisches neuladen im Browsers
+        },
+      }
     }
 
   });

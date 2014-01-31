@@ -241,9 +241,9 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 // --------------------------------------------------
 
 // Number of columns in the grid system
-$grid-columns:              12 !default;
+$grid-columns:              18 !default; // 12 !default
 // Padding, to be divided by two and applied to the left and right of all columns
-$grid-gutter-width:         30px !default;
+$grid-gutter-width:         8px !default; // 30px !default
 // Point at which the navbar stops collapsing
 $grid-float-breakpoint:     $screen-sm !default;
 
@@ -620,10 +620,10 @@ $component-offset-horizontal: 180px !default;
 // --------------------------------------------------
 
 // Small screen / tablet
-$container-tablet:            ((720px + $grid-gutter-width)) !default;
+$container-tablet:            ((720px + $grid-gutter-width)) !default; // (720px + $grid-gutter-width)
 
 // Medium screen / desktop
-$container-desktop:           ((940px + $grid-gutter-width)) !default;
+$container-desktop:           ((940px + $grid-gutter-width)) !default; // (940px + $grid-gutter-width)
 
 // Large screen / wide desktop
-$container-lg-desktop:        ((1140px + $grid-gutter-width)) !default;
+$container-lg-desktop:        ((1140px + $grid-gutter-width)) !default; // (1140px + $grid-gutter-width)
