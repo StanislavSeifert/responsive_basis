@@ -1,6 +1,7 @@
 .news-list-item {
 	margin-bottom: 0.8rem;
-	overflow: hidden;
+	overflow: hidden;	
+	padding-bottom: 10px;
 	.news-list-date {
 		display: block;
 	    float: right;
@@ -19,9 +20,8 @@
 @media screen and (max-width: $screen-xs-max) {
 	.news-list-item {
 		border-bottom: 1px solid $grey-dark;
-		padding-bottom: 10px;
-		&:nth-child(4) {
-			border: 0;
-		}
+		//&:nth-child(3n) {
+		//	border: 0;
+		//	}
 	}
 }

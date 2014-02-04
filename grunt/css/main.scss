@@ -9,10 +9,12 @@
 @import "sass/partials/reset";
 @import "sass/partials/grid";
 
+@import "sass/partials/grid_color";
 @import "sass/partials/header";
 @import "sass/partials/footer";
 @import "sass/partials/content";
-@import "sass/partials/navi";
+@import "sass/partials/mainnavi";
+@import "sass/partials/subnavi";
 @import "sass/partials/search";
 @import "sass/partials/news";
 

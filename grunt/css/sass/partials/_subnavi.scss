@@ -1,0 +1,122 @@
+.row {
+	.mobile_menu {
+		padding-top: -10px;
+		> div {
+			padding:0;
+			overflow: visible;
+			> ul {
+				> li {
+					@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
+					padding: 5px;
+					a {
+						background: url("../images/icons/toggler.png") no-repeat right center;
+						color: $white;
+						display: block;
+						font-family: 'Ubuntu',sans-serif;
+						font-size: 18px;
+						font-weight: bold;
+						line-height: 30px;
+						margin-left: 0;
+						padding: 0;
+					}
+					> ul {
+						display: none;
+					}
+					&.act {
+						> a {
+							color: #015496;
+							font-weight: bold;
+						}
+						&.hassub > a, &.hassub a.links_act2 {
+							background-image: url("../images/icons/toggler_open.png");
+
+						}
+						> ul {
+							display: block;
+						}
+					}
+				}
+			}
+		} 
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
+	.row{
+		div.mobile_menu {
+			> div {
+				background: #CDCDD1;
+				> ul {
+					padding-top: 15px;
+					> li {
+						padding: 0 0 0 10px;
+						background: none;
+						a {
+							color: $black;
+							font-size: 0.6rem;
+							font-weight: normal;
+							line-height: 2em;
+							background: none;
+							padding-left: 10px;
+							border-bottom: 1px solid #fff;
+							&:hover {
+								font-weight: bold;
+								color: #015496;
+								text-decoration: none;
+								border-left: 3px solid #005596;
+							}
+						}
+						ul {
+							padding-left: 10px;
+							 li {
+							 	padding-left: 10px;
+							 	a {
+							 		padding-left: 0;
+							 		&:hover {
+										border-left: none;
+									}
+							 	}
+							 	&.act {
+									a {
+										color: #016597;
+										font-weight: bold;
+									}
+									&.hassub > a, &.hassub a.links_act2 {
+										background: none;
+
+									}
+									> ul {
+										display: block;
+									}
+								}
+							 	&:hover {
+									border-left: 3px solid #005596;
+								}
+							 }
+						}
+
+						&.act {
+							> a {
+								border-left: 3px solid #FFFFFF;
+								color: #015496;
+								font-weight: bold;
+								border-bottom: 0;
+							}
+							&.hassub > a, &.hassub a.links_act2 {
+								background: none;
+
+							}
+							> ul {
+								display: block;
+							}
+						}
+						&:first-child {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,224 @@
+nav {
+	> div > div.mobile-topbar {
+		overflow: visible;
+	}
+
+	.category{
+		position: relative;
+		padding-bottom: 38px;
+		.toggler {
+			display: none;
+		}
+
+		li {
+			display: inline-block;
+			background: $blue;
+			margin:0px;
+			border-bottom: 5px solid $blue;
+			span {
+				display: none;
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+				color: #fff;
+				background: $blue;
+				padding: 6px;
+				width: 100%;
+				font-size:.6rem;
+			}
+			a {
+				color: #fff;
+				text-transform: uppercase;
+				display: block;
+				border-bottom: 4px solid $grey-dark;
+				padding: 2px 6px 2px;
+				font-family: Impact, Arial, sans-serif;
+				//font-size: 0.750rem;
+				//line-height: 0.750rem;
+				font-size: 18px;
+				line-height: 18px;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			&.active {
+				span {
+					display: inline-block;
+				}
+			}
+
+			&.check {
+				border-bottom: 5px solid $green;
+				&:hover, &.active {
+					background: $green;
+					border-color: $blue;
+					span {
+						background: $green;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $green;
+				}
+			}
+			&.gesetz {
+				border-bottom: 5px solid $orange;
+				&:hover, &.active {
+					background: $orange;
+					border-color: $blue;
+					span {
+						background: $orange;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $orange;
+				}
+			}
+			&.online {
+				border-bottom: 5px solid $purple;
+				&:hover, &.active {
+					background: $purple;
+					border-color: $blue;
+					span {
+						background: $purple;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $purple;
+				}
+			}
+			&.kreativ {
+				border-bottom: 5px solid $red;
+				&:hover, &.active {
+					background: $red;
+					border-color: $blue;
+					span {
+						background: $red;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $red;
+				}
+			}
+			&.extras {
+				border-bottom: 5px solid $green-dark;
+				&:hover, &.active {
+					background: $green-dark;
+					border-color: $blue;
+					span {
+						background: $green-dark;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $green-dark;
+				}
+			}
+			&.mobil {
+				border-bottom: 5px solid $yellow;
+				&:hover, &.active {
+					background: $yellow;
+					border-color: $blue;
+					span {
+						background: $yellow;
+						display: inline-block;
+					}
+				}
+				&.active {
+					border-color: $yellow;
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: $screen-sm-min) {
+	nav.row{
+		color: $white;
+		height: 50px;
+		
+		> div > .mobile-topbar {
+			@include background-image(linear-gradient(#4283B5 0%, #9AC3E6 100%));
+			height: 35px;
+			width: 100%;
+			position: relative;
+		}
+
+		.category, .mobile-search {
+			.toggler {
+				cursor: pointer;
+				display: block;
+				font-weight: bold;
+				height: 35px;
+				font-size: 18px;
+				line-height: 35px;
+			}
+			&.open {
+				.toggler .icon {
+					@include rotate(90deg);
+				}
+			}
+		}
+
+		.category {
+			border-right: 2px solid #ccc;
+			padding-bottom:0;
+			position: relative;
+			z-index: 2000;
+			width: 60%;
+			float: left;
+			.toggler {
+				padding-left: 30px;
+				.icon {
+					background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+					display: block;
+					position: absolute;
+					left: $box-half-padding;
+					top: $box-half-padding*2;
+					height: 20px;
+					width: 20px;
+				}
+			}
+
+			> ul {
+				//@include background-image(linear-gradient(to bottom, #9AC3E6 0%, #4283B5 100%));
+				@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
+				@include box-sizing(content-box);
+				border-right: 2px solid #CCCCCC;
+				display: none;
+				position: absolute;
+				width: 100%;
+			}
+
+			&.open {
+				ul {
+					display: block;
+					li {
+						display: inline;
+						list-style-type: none;
+						margin: 0;
+						text-align: right;
+						margin:0;
+						a {
+							border: 0;
+							padding: 5px 10px;
+							font-family: 'Ubuntu', Arial, sans-serif;
+						}
+						&.active span,
+						&:hover span,
+						span {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+}

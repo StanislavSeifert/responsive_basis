@@ -13,6 +13,7 @@
 
 .row {
 	padding: 0 6px;
+	margin: 0;
 	background: $grey-dark; 
 
 	> div {
@@ -28,8 +29,7 @@
 			background: $white;
 			padding: $box-half-padding*2;
 			overflow: hidden;
-			padding-bottom: $box-half-padding*4; 
-
+			padding-bottom: $box-half-padding*4;
 		}
 	}
 

@@ -1,0 +1,151 @@
+
+.container {
+	> section.row {
+
+		> .col-sm-13 {
+			//padding-left: 0;
+			> div {
+				background: $green-matt;
+				a {
+					text-decoration: underline;
+					&:hover {
+						text-decoration: none; 
+					}
+				}
+			}
+		}
+
+		// Clear Style - First Level Items
+		div > .row {
+			background: none;
+			> div {
+				background: none;
+				> div {
+					background: $white;
+					@include border-radius(6px);
+					border: 1px solid $green;
+				}
+			}
+		}
+	}
+
+	//PC-CHECK
+	&.pccheck{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $green-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $green;
+			}
+		}
+	}
+
+	//WEBGESETZE
+	&.webgesetz{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $orange-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $orange;
+			}
+		}
+	}
+	//ONLINE
+	&.online{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $purple-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $purple;
+			}
+		}
+	}
+	//SEI KREATIV
+	&.seikreativ{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $red-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $red;
+			}
+		}
+	}
+	//EXTRAS
+	&.extras{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $green-dark-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $green-dark;
+			}
+		}
+	}
+	//MOBIL
+	&.mobil{
+		> section.row {
+			> .col-sm-13 > div {
+				background: $yellow-matt;
+			}
+
+			div > .row > div > div {
+				border: 1px solid $yellow;
+			}
+		}
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
+
+	.container {
+		> section.row {
+			> .col-sm-5 {
+				padding-right: 0;
+				> div {
+					border-right: 8px solid $green; //default
+				}
+			}
+			> .col-sm-13 {
+				padding-left: 0;
+			}
+		}
+
+		//PC-CHECK
+		&.pccheck > section.row > .col-sm-5 > div {
+			border-right: 8px solid $green;
+		}
+		//WEBGESETZE
+		&.webgesetz > section.row > .col-sm-5 > div {
+			border-right: 8px solid $orange;
+		}
+		//ONLINE
+		&.online > section.row > .col-sm-5 > div {
+			border-right: 8px solid $purple;
+		}
+		//SEI KREATIV
+		&.seikreativ > section.row > .col-sm-5 > div {
+			border-right: 8px solid $red;
+		}
+		//EXTRAS
+		&.extras > section.row > .col-sm-5 > div {
+			border-right: 8px solid $green-dark;
+		}
+		//MOBIL
+		&.mobil > section.row > .col-sm-5 > div {
+			border-right: 8px solid $yellow;
+		}
+				
+			
+		
+	}
+}
