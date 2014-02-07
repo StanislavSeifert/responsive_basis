@@ -1,90 +1,76 @@
-nav {
+nav.row{
 	.mobile-search {
 		position: absolute;
-		top: $box-half-padding;
-		right: $box-half-padding;
-		span.toggler {
+		top: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1000;
+		.tx-macinasearchbox-pi1 {
+			@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
+			bottom: -40px;
 			display: none;
+			height: 40px;
+			width: 100%;
+			margin: 0;
+			padding: 6px 10px;
+			position: absolute;
+
+			input {
+				border: 1px solid $grey-font;
+				height: auto;
+				padding: $box-half-padding;
+				width: 100%;
+			}
 		}
-	}
 
-	div.tx-macinasearchbox-pi1 form {
-		input {
-			@include box-sizing(border-box);
-			border: $box-half-padding solid #3496CC;
-			height: 31px;
-			width: 210px;
+		&.open {
+			.tx-macinasearchbox-pi1 {
+				display: block;
+			}
+		}
 
-			input, textarea {
-				font-size: 1.3em;
-				background: none repeat scroll 0 0 #FAFAFA;
-				color: #777777;
+		.toggler {
+			//float: right;
+			margin-left: 60%;
+			padding-right: $box-half-padding+25px;
+			position: relative;
+			text-align: right;
+			width: 40%;
+			.icon {
+				@include rotate(180deg);
+				background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				display: block;
+				position: absolute;
+				right: $box-half-padding;
+				top: $box-half-padding*2;
+				width: 20px;
+				height: 20px;
 			}
 		}
 	}
 }
 
-@media screen and (max-width: $screen-sm-min) {
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
 	nav.row{
 		.mobile-search {
-			//float: left;
-			//position: relative;
-			//top: -30px;
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			z-index: 1000;
-
-			.tx-macinasearchbox-pi1 {
-				//@include background-image(linear-gradient(to bottom, #9AC3E6 0%, #4283B5 100%));
-				@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
-				bottom: -40px;
-				display: none;
-				height: 40px;
-				left: auto;
-				margin: 0;
-				padding: 6px 10px;
-				position: absolute;
-				right: auto;
-				top: auto;
-				width: 100%;
+			right: $box-half-padding*2;
+			width: 210px;
+			div.tx-macinasearchbox-pi1 {
+				background: none;
+				display: block;
+				padding: $box-half-padding;
+				width: 210px;
 				input {
-					border: 1px solid $grey-font;
-					height: auto;
-					padding: $box-half-padding;
-					width: 100%;
+					@include box-sizing(border-box);
+					border: $box-half-padding solid $blue;
+					height: 31px;
+					width: 210px;
 				}
 			}
-
-			&.open {
-				.tx-macinasearchbox-pi1 {
-					display: block;
-					//margin-left: $box-half-padding;
-				}
+			span.toggler {
+				display: none;
 			}
-
-			.toggler {
-				float: right;
-				margin-left: 60%;
-				padding-right: $box-half-padding+25px;
-				position: relative;
-				text-align: right;
-				width: 40%;
-				.icon {
-					@include rotate(180deg);
-					background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-					display: block;
-					position: absolute;
-					right: $box-half-padding;
-					top: $box-half-padding*2;
-					width: 20px;
-					height: 20px;
-				}
-			}
-
 		}
-
 	}
-
 }

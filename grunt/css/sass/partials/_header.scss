@@ -11,6 +11,7 @@ header {
 	    position: absolute;
 	    right: $box-half-padding;
 	    top: 8px;
+	    display: none;
 	    #faceb {
 	    	float: left;
 	    	margin-right:5px;
@@ -24,15 +25,16 @@ header {
 	}
 }
 
-/* Small devices (smartphones, 240px and up) */
-@media screen and (max-width: $screen-xs-max) {
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
 	header {
 		#socialbuttons {
-			display: none;
+			display: block;
 		}
 
 		img.img-responsive {
-			width: 90%;
+			width: auto;
 		}
 	}
 }

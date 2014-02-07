@@ -8,14 +8,21 @@
 	right: 5px;
 }
 
-/* Small devices (smartphones, 240px and up) */
-@media screen and (max-width: $screen-xs-max) {
+.csc-textpic-imagewrap {
+	text-align: left;
+	float: left;
+	img {
+		margin-top: 0;	
+		margin-left: 0;		
+	}
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
 	.csc-textpic-imagewrap {
-		text-align: left;
-		float: left;
-		img {
-			margin-top: 0;	
-			margin-left: 0;		
-		}
+		text-align: center;
+		float: none;
 	}
 }

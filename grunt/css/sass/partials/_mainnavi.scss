@@ -1,13 +1,59 @@
-nav {
+nav.row {
+	color: $white;
+	height: 35px;
 	> div > div.mobile-topbar {
 		overflow: visible;
+		@include background-image(linear-gradient(#4283B5 0%, #9AC3E6 100%));
+		height: 35px;
+		width: 100%;
+		position: relative;
+	}
+
+	.category, .mobile-search {
+		.toggler {
+			cursor: pointer;
+			display: block;
+			font-weight: bold;
+			height: 35px;
+			font-size: 18px;
+			line-height: 35px;
+		}
+		&.open {
+			.toggler .icon {
+				@include rotate(90deg);
+			}
+		}
 	}
 
 	.category{
 		position: relative;
-		padding-bottom: 38px;
+		border-right: 2px solid #ccc;
+		padding-bottom:0;
+		z-index: 2000;
+		width: 60%;
+		float: left;
+
 		.toggler {
+			padding-left: 30px;
+			.icon {
+				background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				display: block;
+				position: absolute;
+				left: $box-half-padding;
+				top: $box-half-padding*2;
+				height: 20px;
+				width: 20px;
+			}
+		}
+
+		> ul {
+			@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
+			@include box-sizing(content-box);
+			border-right: 2px solid #ccc;
+			border-bottom: 2px solid #ccc;
 			display: none;
+			position: absolute;
+			width: 100%;
 		}
 
 		li {
@@ -133,92 +179,61 @@ nav {
 				}
 			}
 		}
-	}
-}
 
-
-@media (max-width: $screen-sm-min) {
-	nav.row{
-		color: $white;
-		height: 50px;
-		
-		> div > .mobile-topbar {
-			@include background-image(linear-gradient(#4283B5 0%, #9AC3E6 100%));
-			height: 35px;
-			width: 100%;
-			position: relative;
-		}
-
-		.category, .mobile-search {
-			.toggler {
-				cursor: pointer;
+		&.open {
+			ul {
 				display: block;
-				font-weight: bold;
-				height: 35px;
-				font-size: 18px;
-				line-height: 35px;
-			}
-			&.open {
-				.toggler .icon {
-					@include rotate(90deg);
-				}
-			}
-		}
-
-		.category {
-			border-right: 2px solid #ccc;
-			padding-bottom:0;
-			position: relative;
-			z-index: 2000;
-			width: 60%;
-			float: left;
-			.toggler {
-				padding-left: 30px;
-				.icon {
-					background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-					display: block;
-					position: absolute;
-					left: $box-half-padding;
-					top: $box-half-padding*2;
-					height: 20px;
-					width: 20px;
-				}
-			}
-
-			> ul {
-				//@include background-image(linear-gradient(to bottom, #9AC3E6 0%, #4283B5 100%));
-				@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
-				@include box-sizing(content-box);
-				border-right: 2px solid #CCCCCC;
-				display: none;
-				position: absolute;
-				width: 100%;
-			}
-
-			&.open {
-				ul {
-					display: block;
-					li {
-						display: inline;
-						list-style-type: none;
-						margin: 0;
-						text-align: right;
-						margin:0;
-						a {
-							border: 0;
-							padding: 5px 10px;
-							font-family: 'Ubuntu', Arial, sans-serif;
-						}
-						&.active span,
-						&:hover span,
-						span {
-							display: none;
-						}
+				li {
+					display: inline;
+					list-style-type: none;
+					margin: 0;
+					text-align: right;
+					margin:0;
+					a {
+						border: 0;
+						padding: 5px 10px;
+						font-family: 'Ubuntu', Arial, sans-serif;
+					}
+					&.active span,
+					&:hover span,
+					span {
+						display: none;
 					}
 				}
 			}
 		}
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) {
+	nav.row {
+		height: auto;
+		> div > div.mobile-topbar {
+			background-image: none;
+			height: auto;
+			width: auto;
+			position: static;
+		}
+		.category {
+			padding-bottom: 38px;
+			border: 0;
+			float: none;
+			width: auto;
+			.toggler {
+				display: none;
+			}
+
+			> ul {
+				background: none;
+				@include box-sizing(content-box);
+				border: none;
+				display: inline;
+				position: static;
+				width: auto;
+			}
+		}
 
 	}
-
 }
+

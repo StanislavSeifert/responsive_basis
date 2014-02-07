@@ -5,9 +5,10 @@
 		var moreButton = $(".toggle-box");
 		var windowsize = $(window).width();
 		var count_rows = $("section.row").length;
+		var mobileResolution = 767; // < 768
 
 		// Row Fluid - Equal Box Height
-		if (windowsize >= 750) {
+		if (windowsize > mobileResolution) {
 			for(var i = 0; i < count_rows; i++){ // Vergleicht immer nur die Höhe der Columns pro .row - Ansonsten hätten alle col´s Global die höhe der Höchten col auf der ganzen Seite
 				var equalHeightSelect = $("section.row:nth(" + i + ") > div:not(.nivoslider) > div");
 				var equalHeightContentBoxes = equalHeightSelect.find(".row > div > div");
@@ -26,7 +27,7 @@
 			// Nicht auf Basis des letzt berechneten Wertes
 			$("section.row > div > div").css("height","auto").find(".row > div > div").css("height","auto");
 			// Row Fluid - Equal Box Height
-			if (windowsize >= 750) {
+			if (windowsize > mobileResolution) {
 				for(var i = 0; i < count_rows; i++){  // Vergleicht immer nur die Höhe der Columns pro .row - Ansonsten hätten alle col´s Global die höhe der Höchten col auf der ganzen Seite
 					var equalHeightSelect = $("section.row:nth(" + i + ") > div:not(.nivoslider) > div");
 					var equalHeightContentBoxes = equalHeightSelect.find(".row > div > div");
@@ -45,19 +46,21 @@
 
 		// Smartphone resolution > 768
 		// Toggle Boxes
-		moreButton.prepend("<span class='icon'>&nbsp;</span>");
-		moreButton.click(function(){
-		if (windowsize < 768) {
+		if (windowsize <= mobileResolution) {
+			moreButton.append("<span class='icon'>&nbsp;</span>");
+			moreButton.click(function(){
 
-				if ($(this).height() > 35) {
-					$(this).css("height", "2.1rem");
-					$(this).find(".icon").css("transform", "none");
-				} else {
-					$(this).css("height", "auto");
-					$(this).find(".icon").css("transform", "rotate(90deg)");
-				}
-			}
-		});
+
+					if ($(this).height() > 35) {
+						$(this).css("height", "35px");
+						$(this).find(".icon").css("transform", "none");
+					} else {
+						$(this).css("height", "auto");
+						$(this).find(".icon").css("transform", "rotate(90deg)");
+					}
+				
+			});
+		}
 
 		// Mobile Menu
 		var mobile_menu = $('.mobile_menu');

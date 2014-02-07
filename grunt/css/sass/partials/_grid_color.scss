@@ -3,8 +3,8 @@
 	> section.row {
 
 		> .col-sm-13 {
-			//padding-left: 0;
 			> div {
+				padding-bottom: 10px;
 				background: $green-matt;
 				a {
 					text-decoration: underline;
@@ -17,10 +17,17 @@
 
 		// Clear Style - First Level Items
 		div > .row {
+			padding-left:$box-half-padding;
+			padding-right:$box-half-padding;
 			background: none;
+			h1 {
+				padding-left:$box-half-padding;
+			}
 			> div {
+				padding: $box-half-padding;
 				background: none;
 				> div {
+					padding: 13px 13px 35px;
 					background: $white;
 					@include border-radius(6px);
 					border: 1px solid $green;
