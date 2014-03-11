@@ -1,5 +1,5 @@
 .csc-textpic-imagewrap {
-	text-align: center;
+	//text-align: center;
 }
 
 .more {
@@ -8,9 +8,15 @@
 	right: 5px;
 }
 
+.toggle-box {
+	.more {
+		bottom: -50px;
+	}
+}
+
 .csc-textpic-imagewrap {
-	text-align: left;
-	float: left;
+	//text-align: left;
+	//float: left;
 	img {
 		margin-top: 0;	
 		margin-left: 0;		
@@ -22,7 +28,13 @@
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: $screen-sm-min) {
 	.csc-textpic-imagewrap {
-		text-align: center;
-		float: none;
+		//text-align: center;
+		//float: none;
+	}
+
+	.toggle-box {
+		.more {
+			bottom: 5px;
+		}
 	}
 }

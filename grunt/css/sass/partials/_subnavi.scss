@@ -9,7 +9,8 @@
 					@include background-image(linear-gradient(#9AC3E6 0%, #4283B5 100%));
 					padding: 5px;
 					a {
-						background: url("../images/icons/toggler.png") no-repeat right center;
+					    text-decoration: none;
+						background: url("/fileadmin/public/images/icons/toggler.png") no-repeat right center;
 						color: $white;
 						display: block;
 						font-family: 'Ubuntu',sans-serif;
@@ -20,21 +21,20 @@
 						padding: 0;
 						&:hover {
 							color:$blue-dark;
-							text-decoration: none;
 						}
 					}
 					> ul {
 						display: none;
 						margin-left: 10px;
 					}
-					&.act {
-						> a {
+					&.act, &.active {
+						> a, a.active {
 							color: $blue-dark;
 							font-weight: bold;
 							text-decoration: none;
 						}
-						&.hassub > a, &.hassub a.links_act2 {
-							background-image: url("../images/icons/toggler_open.png");
+						&.sub > a, &.sub a.act {
+							background-image: url("/fileadmin/public/images/icons/toggler_open.png");
 
 						}
 						> ul {
@@ -83,12 +83,12 @@
 										border-left: none;
 									}
 							 	}
-							 	&.act {
+							 	&.active {
 									a {
 										color: #016597;
 										font-weight: bold;
 									}
-									&.hassub > a, &.hassub a.links_act2 {
+									&.hassub > a, &.hassub a.links_active2 {
 										background: none;
 
 									}
@@ -101,14 +101,17 @@
 								}
 							 }
 						}
-						&.act {
+						&.sub > a, &.sub a.active {
+							background-image: none;
+						}
+						&.active {
 							> a {
 								border-left: 3px solid #FFFFFF;
 								color: $blue-dark;
 								font-weight: bold;
-								border-bottom: 0;
+								//border-bottom: 0;
 							}
-							&.hassub > a, &.hassub a.links_act2 {
+							&.hassub > a, &.hassub a.links_active2 {
 								background: none;
 
 							}

@@ -14,14 +14,16 @@
 				}
 			}
 		}
-
+		h1 {
+			padding-left:$box-half-padding*2;
+		}
 		// Clear Style - First Level Items
 		div > .row {
 			padding-left:$box-half-padding;
 			padding-right:$box-half-padding;
 			background: none;
 			h1 {
-				padding-left:$box-half-padding;
+				padding-left:0;
 			}
 			> div {
 				padding: $box-half-padding;
@@ -116,7 +118,7 @@
 
 	.container {
 		> section.row {
-			> .col-sm-5 {
+			> .mobile_menu {
 				padding-right: 0;
 				> div {
 					border-right: 8px solid $green; //default
@@ -128,27 +130,27 @@
 		}
 
 		//PC-CHECK
-		&.pccheck > section.row > .col-sm-5 > div {
+		&.pccheck > section.row > .mobile_menu > div {
 			border-right: 8px solid $green;
 		}
 		//WEBGESETZE
-		&.webgesetz > section.row > .col-sm-5 > div {
+		&.webgesetz > section.row > .mobile_menu > div {
 			border-right: 8px solid $orange;
 		}
 		//ONLINE
-		&.online > section.row > .col-sm-5 > div {
+		&.online > section.row > .mobile_menu > div {
 			border-right: 8px solid $purple;
 		}
 		//SEI KREATIV
-		&.seikreativ > section.row > .col-sm-5 > div {
+		&.seikreativ > section.row > .mobile_menu > div {
 			border-right: 8px solid $red;
 		}
 		//EXTRAS
-		&.extras > section.row > .col-sm-5 > div {
+		&.extras > section.row > .mobile_menu > div {
 			border-right: 8px solid $green-dark;
 		}
 		//MOBIL
-		&.mobil > section.row > .col-sm-5 > div {
+		&.mobil > section.row > .mobile_menu > div {
 			border-right: 8px solid $yellow;
 		}
 				

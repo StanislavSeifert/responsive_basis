@@ -6,12 +6,12 @@ html, body {
 }
 
 html {
-	font-size: 140%;
+	font-size: 137.5%;
 }
 
-body {
-    background:$blue-light;
-    font-family: 'Trebuchet MS',Verdana,Helvetica,Arial,sans-serif;
+body { 
+    background-color: $blue-light;
+    font-family: $font-stack;
     min-height: 100%; 
     width: 100%;
     overflow-x: hidden;
@@ -67,6 +67,8 @@ p {
 img {
 	text-align: center;
 	margin: 10px;
+	max-width: 100%;
+	height:auto;
 }
 
 iframe {
@@ -79,21 +81,22 @@ iframe {
 
 .container {
 	padding: 0;
+	overflow: hidden;
 }
 
 
-.sekundar-content {
+.sekundaer-content {
 	display: none;
 }
 
 /* Small devices (tablets, 768px and up) */
-@media screen and (min-width: $screen-sm-min) {
+@media only screen and (min-width: $screen-sm-min) {
 	html {
-		font-size: 120%;
+		font-size: 140%;
 	}
 
 	body {
-		background: url("../images/background.png");
+		background: url("/fileadmin/public/images/background.png");
     	background-repeat: repeat-x;
 	}
 
@@ -101,21 +104,25 @@ iframe {
 		width: 90%;
 	}
 
-	.sekundar-content {
+	.sekundaer-content {
 		display: inline-block;
+	}
+	
+	.container {
+		overflow: visible;
 	}
 
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: $screen-md-min) { 
+@media only screen and (min-width: $screen-md-min) { 
 	html {
 		font-size: 150%;
 	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width: $screen-lg-min) {
+@media only screen and (min-width: $screen-lg-min) {
 	html {
 		font-size: 165%;
 	}

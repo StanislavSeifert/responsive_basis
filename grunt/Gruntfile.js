@@ -4,12 +4,20 @@ module.exports = function(grunt) {
 
     // Compass Framework Interpreter
     compass: {
-      dist: {
+      dev: {
         options: {
           outputStyle: 'expanded', // expanded, compressed, compact, nested
           sassDir: 'css',
           specify: 'css/main.scss',
-          cssDir: '../build/css'
+          cssDir: '../build/css/prod/'
+        }
+      },
+      prod: {
+        options: {
+          outputStyle: 'compressed', // expanded, compressed, compact, nested
+          sassDir: 'css',
+          specify: 'css/main.scss',
+          cssDir: '../build/css/prod/'
         }
       }
     },
@@ -21,44 +29,46 @@ module.exports = function(grunt) {
           'js/libs/*.js', // All JS in the libs folder
           'js/specific.js'  // This specific file
         ],
-        dest: '../build/js/application.js'
+        dest: '../build/js/prod/application.min.js' //application.js'
       }
     },
 
-    // Zusammengeführte Jvascript-Datei minimizen
+    // Zusammengeführte Javascript-Datei minimizen
     uglify: {
       build: {
-        src: '../build/js/application.js',
-        dest: '../build/js/application.min.js'
+        src: '../build/js/prod/application.min.js', //application.js'
+        dest: '../build/js/prod/application.min.js'
       }
     },
 
     // Listener auf veränderte SASS uns JS Dateien
     watch: {
-      // Wenn sich bei SCSS etwas verändert
-      sass: {
-        files: ['css/sass/*.scss', 'css/sass/**/*.scss', 'css/sass/vendor/**/*.scss'],
-        tasks: ['compass:dist'],
-        options: {
-          livereload: true // Automatisches neuladen im Browsers
-        },
-      },
-      // Wenn sich bei JS etwas verändert
-      scripts: {
-        files: ['js/*.js'],
-        tasks: ['concat', 'uglify'], //Zusammenführen & Minimizen
-        options: {
-            spawn: false,
+        // ############ DEV ##############################################################
+        // Wenn sich bei SCSS etwas verändert
+        sass: {
+          files: ['css/sass/*.scss', 'css/sass/**/*.scss', 'css/sass/vendor/**/*.scss'],
+         tasks: ['compass:dev'],
+          options: {
             livereload: true // Automatisches neuladen im Browsers
-        }
-      },
-      // Wenn sich das HTML ändert
-      html: {
-        files: ['../build/*.html'],
-        options: {
-          livereload: true // Automatisches neuladen im Browsers
+          },
         },
-      }
+        // Wenn sich bei JS etwas verändert
+        scripts: {
+          files: ['js/*.js'],
+          tasks: ['concat'], // Zusammenführen
+          options: {
+              spawn: false,
+              livereload: true // Automatisches neuladen im Browsers
+          }
+        },
+        // Wenn sich das HTML ändert
+        html: {
+          files: ['../build/*.html'],
+          options: {
+            livereload: true // Automatisches neuladen im Browsers
+          }
+        }
+
     }
 
   });
@@ -72,6 +82,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Tasks
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('dev', ['watch', 'compass:dev', 'concat']); // grunt dev : Development-Mode - inkl. Listener
+  grunt.registerTask('default', ['watch', 'compass:dev', 'concat']); // default : grunt = grunt dev
+  grunt.registerTask('prod', ['compass:prod', 'concat', 'uglify']); // grunt watch : Production-Mode - Zum erzeugen der Finalem CSS und JS Dateien
+  //grunt.registerTask('default', ['watch', 'compass:dev', 'concat']); // Default = Dev
 
 };

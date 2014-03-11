@@ -16,7 +16,7 @@ nav.row{
 			position: absolute;
 
 			input {
-				border: 1px solid $grey-font;
+				border: 1px solid $grey-font; 
 				height: auto;
 				padding: $box-half-padding;
 				width: 100%;
@@ -30,7 +30,6 @@ nav.row{
 		}
 
 		.toggler {
-			//float: right;
 			margin-left: 60%;
 			padding-right: $box-half-padding+25px;
 			position: relative;
@@ -38,7 +37,7 @@ nav.row{
 			width: 40%;
 			.icon {
 				@include rotate(180deg);
-				background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				background: url("/fileadmin/public/images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 				display: block;
 				position: absolute;
 				right: $box-half-padding;
@@ -56,6 +55,7 @@ nav.row{
 		.mobile-search {
 			right: $box-half-padding*2;
 			width: 210px;
+			z-index: 3000;
 			div.tx-macinasearchbox-pi1 {
 				background: none;
 				display: block;

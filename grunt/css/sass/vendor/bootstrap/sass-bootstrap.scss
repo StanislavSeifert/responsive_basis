@@ -19,12 +19,12 @@
 
 // Reset
 @import "normalize";
-@import "print";
+//@import "print";
 
 // Core CSS
 @import "scaffolding";
 //@import "type";
-@import "code";
+//@import "code";
 @import "grid";
 /*@import "tables";
 @import "forms";
@@ -56,9 +56,9 @@
 @import "alerts";
 @import "modals";
 @import "tooltip";
-@import "popovers";
-@import "carousel";*/
+@import "popovers";*/
+@import "carousel";
 
 // Utility classes
-@import "utilities"; // Has to be last to override when necessary
-@import "responsive-utilities"; 
+//@import "utilities"; // Has to be last to override when necessary
+//@import "responsive-utilities"; 

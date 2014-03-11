@@ -36,7 +36,7 @@ nav.row {
 		.toggler {
 			padding-left: 30px;
 			.icon {
-				background: url("../images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				background: url("/fileadmin/public/images/icons/toggler.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 				display: block;
 				position: absolute;
 				left: $box-half-padding;
@@ -64,6 +64,7 @@ nav.row {
 			span {
 				display: none;
 				position: absolute;
+				z-index: 100;
 				bottom: -10px;
 				left: 0;
 				color: #fff;
@@ -91,10 +92,11 @@ nav.row {
 			&.active {
 				span {
 					display: inline-block;
+					z-index: 0;
 				}
 			}
 
-			&.check {
+			&.pccheck {
 				border-bottom: 5px solid $green;
 				&:hover, &.active {
 					background: $green;
@@ -108,7 +110,7 @@ nav.row {
 					border-color: $green;
 				}
 			}
-			&.gesetz {
+			&.webgesetz {
 				border-bottom: 5px solid $orange;
 				&:hover, &.active {
 					background: $orange;
@@ -136,7 +138,7 @@ nav.row {
 					border-color: $purple;
 				}
 			}
-			&.kreativ {
+			&.seikreativ {
 				border-bottom: 5px solid $red;
 				&:hover, &.active {
 					background: $red;
@@ -178,6 +180,19 @@ nav.row {
 					border-color: $yellow;
 				}
 			}
+			&:first-child {
+				span {
+					display: inline;
+				}
+			}
+		}
+		
+		ul {
+			&:hover {
+				span.default {
+					display: none;
+				}
+			}
 		}
 
 		&.open {
@@ -193,6 +208,9 @@ nav.row {
 						border: 0;
 						padding: 5px 10px;
 						font-family: 'Ubuntu', Arial, sans-serif;
+						&:hover, &.active {
+							color: $blue-dark;
+						}
 					}
 					&.active span,
 					&:hover span,

@@ -3,21 +3,27 @@
 	/* domReady */
 	$(function() {
 		var moreButton = $(".toggle-box");
+		moreButton.append("<span class='icon'>&nbsp;</span>");
 		var windowsize = $(window).width();
 		var count_rows = $("section.row").length;
 		var mobileResolution = 767; // < 768
 
-		// Row Fluid - Equal Box Height
-		if (windowsize > mobileResolution) {
+		function equalHeightBox(){
 			for(var i = 0; i < count_rows; i++){ // Vergleicht immer nur die Höhe der Columns pro .row - Ansonsten hätten alle col´s Global die höhe der Höchten col auf der ganzen Seite
-				var equalHeightSelect = $("section.row:nth(" + i + ") > div:not(.nivoslider) > div");
+				var equalHeightSelect = $("section.row:nth(" + i + ") > div:not(.carousel.slide) > div");
 				var equalHeightContentBoxes = equalHeightSelect.find(".row > div > div");
 				// Content Grid
 				equalHeightContentBoxes.equalHeights();
 				// First Level Grid
 				equalHeightSelect.equalHeights();
-
 			}
+		}
+
+		// Row Fluid - Equal Box Height
+		if (windowsize > mobileResolution) {
+			$(window).load(function() {
+			  equalHeightBox();
+			});
 		}
 
 		$( window ).resize(function() {
@@ -28,64 +34,46 @@
 			$("section.row > div > div").css("height","auto").find(".row > div > div").css("height","auto");
 			// Row Fluid - Equal Box Height
 			if (windowsize > mobileResolution) {
-				for(var i = 0; i < count_rows; i++){  // Vergleicht immer nur die Höhe der Columns pro .row - Ansonsten hätten alle col´s Global die höhe der Höchten col auf der ganzen Seite
-					var equalHeightSelect = $("section.row:nth(" + i + ") > div:not(.nivoslider) > div");
-					var equalHeightContentBoxes = equalHeightSelect.find(".row > div > div");
-					// Content Grid
-					equalHeightContentBoxes.equalHeights();
-					// First Level Grid
-					equalHeightSelect.equalHeights();
-				}
+				equalHeightBox();
 			}else{
 				var autoHeightSelect = $("section.row > div > div");
 				autoHeightSelect.css("height","auto");
 				autoHeightSelect.find(".row > div > div").css("height","auto");
+				moreButton.css("height","35px");
 			}
 
 		});
 
 		// Smartphone resolution > 768
 		// Toggle Boxes
-		if (windowsize <= mobileResolution) {
-			moreButton.append("<span class='icon'>&nbsp;</span>");
-			moreButton.click(function(){
+		moreButton.click(function(){
+			if (windowsize <= mobileResolution) {
+				if ($(this).height() > 35) {
+					$(this).css("height", "35px");
+					$(this).find(".icon").css("transform", "none");
+					$(this).css("background","#fff").removeAttr('style').find("h1").removeAttr('style').parent().find(".more").removeAttr('style');
+				} else {
+					$(this).css("height", "auto");
+					$(this).find(".icon").css("transform", "rotate(90deg)");
+					$(this).css("background","#fff").find("h1").css("color","#4283B5").parent().find(".more").css("bottom","2px");
+				}
+			}
+		});
 
-
-					if ($(this).height() > 35) {
-						$(this).css("height", "35px");
-						$(this).find(".icon").css("transform", "none");
-					} else {
-						$(this).css("height", "auto");
-						$(this).find(".icon").css("transform", "rotate(90deg)");
-					}
-				
-			});
-		}
 
 		// Mobile Menu
 		var mobile_menu = $('.mobile_menu');
-		mobile_menu.find('ul.first > li.hassub > a').click(function() {
-			if ($(this).hasClass('links_act')) { // close
-				$(this).removeClass().addClass('links_no').parent().removeClass('act');
+		mobile_menu.find('ul > li.sub > a').click(function() {
+			if ($(this).parent().hasClass('active')) { // close
+				$(this).parent().removeClass('active');
 			} else { // open
-				// close all other subsubmenus
-				mobile_menu.find('ul.first > li.hassub > ul > li > a.links_no2, ul.first > li.hassub > ul > li > a.links_act2').removeClass().addClass('links_no2').parent().removeClass('act');
-				mobile_menu.find('ul.first > li').removeClass('act').find('.links_act').removeClass().addClass('links_no');
-				$(this).parent().addClass('act').find('.links_no').removeClass().addClass('links_act');
+				// close all 
+				$(this).parent().addClass('active');
 			}
-			return false;
+			return false; 
 		});
 
-		mobile_menu.find('ul.first > li.hassub > ul > li.hassub > a.links_no2, ul.first > li.hassub > ul > li.hassub > a.links_act2').click(function() {
-			if ($(this).hasClass('links_act2')) { // close
-				$(this).removeClass().addClass('links_no2').parent().removeClass('act');
-			} else { // open
-				mobile_menu.find('ul.first > li > ul > li').removeClass('act').find('.links_act2').removeClass().addClass('links_no2');
-				$(this).parent().addClass('act').find('.links_no2').removeClass().addClass('links_act2');
-			}
-			return false;
-		});
-
+ 
 		// Top Bar
 		var mobile_topbar = $('.mobile-topbar');
 		mobile_topbar.find('.toggler').click(function() {
@@ -96,30 +84,12 @@
 			}
 		});
 
-		//Nivoslider
-		jQuery(document).ready(function() {
-			jQuery('.tx-imagecycle-pi3').show();
+		
+		//Nivoslider ersatz - Da schlanker
+		$('.carousel.slide').carousel({
+    		interval: 4000 
 		});
-		jQuery(window).load(function() {
-			jQuery('.nivoSlider img').removeAttr("height").removeAttr("width");
-			jQuery('.nivoSlider').nivoSlider({
-				effect: 'fade',
-				prevText: '',
-				nextText: '',
-				slices: 15,
-				boxCols: 8,
-				boxRows: 4,
-				animSpeed: 340,
-				pauseTime: 5500,
-				captionOpacity: '0.8',
-				directionNav: true,
-				directionNavHide: true,
-				controlNav: false,
-				keyboardNav: true,
-				pauseOnHover: false,
-				manualAdvance: false
-			});
-		});
+		
 
 		/* End domReady */
 	});

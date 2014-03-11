@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Specific Grid Modifications
 
 // Grid - Fluid Width Equal Height Columns
@@ -48,18 +49,21 @@ section.row { // "section." Schließt header, nav und footer aus
 				top: 10px;
 				height: 20px;
 				width: 20px;
-				background: url("../images/icons/toggler.png");
-			}
-			.more {
-				display: none;
+				background: url("/fileadmin/public/images/icons/toggler.png");
 			}
 		}
 	}
 
-	> div.nivoslider > div {
-		padding: 0;
-		img {
-			margin: 0;
+	> div.slide {
+		> div {
+				padding: 0;
+			img {
+				margin: 0;
+				width: 100%;
+			}
+		}
+		.carousel-control.left, .carousel-control.right {
+			display: none;
 		}
 	}
 }
