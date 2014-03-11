@@ -35,6 +35,7 @@
 			// Row Fluid - Equal Box Height
 			if (windowsize > mobileResolution) {
 				equalHeightBox();
+				
 			}else{
 				var autoHeightSelect = $("section.row > div > div");
 				autoHeightSelect.css("height","auto");
