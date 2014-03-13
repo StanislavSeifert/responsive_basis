@@ -1,11 +1,23 @@
+// IE 8 CSS HACK START
 .csc-textpic-imagewrap {
-	//text-align: center;
+	width: 100%\9;
+	.csc-textpic-center-outer {
+		width: 100%\9;	
+	}
+	.csc-textpic-center-inner{
+		width: 100%\9;
+	}
+	figure {
+		width: 100%\9;
+	}
 }
+// IE 8 CSS HACK END
 
 .more {
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
+	right: 20px\9; // IE 8 CSS HACK
 }
 
 .toggle-box {
